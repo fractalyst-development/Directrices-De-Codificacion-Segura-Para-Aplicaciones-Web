@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fulfillmentToken fulfillmentType="buy" xmlns="http://ns.adobe.com/adept">
+<distributor>urn:uuid:00000000-0000-0000-0000-000000000001</distributor>
+<operatorURL>http://books.google.com/books/acs4/fulfillment</operatorURL>
+<expiration>2019-10-19T12:33:41-07:00</expiration>
+<transaction>ge:239727e5-2997-0d95-08c1-1cc24fa5a45e:1571512721357993</transaction>
+<userId>15521170870258468065</userId>
+<resourceItemInfo>
+<resource>urn:uuid:239727e5-2997-0d95-08c1-1cc24fa5a45e</resource>
+<resourceItem>1</resourceItem>
+<src>https://books.google.com/books/download/Seguridad_en_aplicaciones_Web_Java.pdf?acsid=urn:uuid:239727e5-2997-0d95-08c1-1cc24fa5a45e&amp;output=acs4_book_bytes&amp;ar=4bb9cae20a3fe671d3778f3f13bdeb1d</src>
+<downloadType>simple</downloadType>
+</resourceItemInfo>
+<hmac>3y+drDOvaNg3qhoEGYWIW5SwWpw=</hmac>
+</fulfillmentToken>
