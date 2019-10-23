@@ -1,2 +1,12 @@
 
 nmap --script ssl-enum-ciphers -p 8181 LOCALHOST
+
+
+
+
+
+keytool -genkeypair -alias ryj -keyalg RSA -validity 777 -keystore ryj-keystore
+keytool -importkeystore -srckeystore ryj-keystore -destkeystore ryj-keystore -deststoretype pkcs12
+keytool -genkey -v -alias ryj12 -keyalg RSA -storetype PKCS12 -keystore ryj_cliente_ks.p12 -storepass Welcome1 -keypass Welcome1
+keytool -export -alias ryj12 -keystore ryj_cliente_ks.p12 -storetype PKCS12 -storepass Welcome1 -rfc -file ryj-autofirmado.cer
+keytool -import -file ryj-autofirmado.cer -keystore /home/usuario/glassfish-4.1.1/glassfish/domains/domain1/config/cacerts.jks -alias -ryj12 -storepass changeit
