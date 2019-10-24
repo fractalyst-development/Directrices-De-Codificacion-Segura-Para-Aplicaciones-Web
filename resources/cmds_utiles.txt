@@ -1,12 +1,34 @@
 
+
+
+
+
 nmap --script ssl-enum-ciphers -p 8181 LOCALHOST
 
+//keytool -genkeypair -alias ryj -keyalg RSA -validity 777 -keystore ryj-keystore
+//keytool -importkeystore -srckeystore ryj-keystore -destkeystore ryj-keystore.pkcs12 -deststoretype pkcs12
+// java cacerts: /usr/lib/jvm/jdk1.8.0_231/jre/lib/security/cacerts
+// GF cacerts:   /home/usuario/glassfish-4.1.1/glassfish/domains/domain1/config/cacerts.jks
 
 
 
-
-keytool -genkeypair -alias ryj -keyalg RSA -validity 777 -keystore ryj-keystore
-keytool -importkeystore -srckeystore ryj-keystore -destkeystore ryj-keystore -deststoretype pkcs12
 keytool -genkey -v -alias ryj12 -keyalg RSA -storetype PKCS12 -keystore ryj_cliente_ks.p12 -storepass Welcome1 -keypass Welcome1
 keytool -export -alias ryj12 -keystore ryj_cliente_ks.p12 -storetype PKCS12 -storepass Welcome1 -rfc -file ryj-autofirmado.cer
 keytool -import -file ryj-autofirmado.cer -keystore /home/usuario/glassfish-4.1.1/glassfish/domains/domain1/config/cacerts.jks -alias -ryj12 -storepass changeit
+
+
+
+sqlmap -r a1Request -p email --dump
+sqlmap -u "http://localhost:8080/09_InyeccionDeCodigo/detalleUsuario.do" --data="email=usuario1%40testmail.com" -p email
+
+
+mkdir WebGoat-Workspace
+cd WebGoat-Workspace
+sudo apt install curl
+curl -o webgoat_developer_bootstrap.sh https://raw.githubusercontent.com/WebGoat/WebGoat/master/webgoat_developer_bootstrap.sh
+chmod +x webgoat_developer_bootstrap.sh 
+
+
+chmod +x webgoat-standalone-7.1-SNAPSHOT-exec.jar 
+java -jar webgoat-standalone-7.0.1-exec.jar --p 8484 --address localhost
+
