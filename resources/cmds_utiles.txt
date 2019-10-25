@@ -27,8 +27,11 @@ java -jar webgoat-container-7.1-exec.jar
 sudo apt install docker
 sudo apt-get install docker.io
 sudo docker pull sonarqube:7.9-community
+//sudo docker save sonarqube > sonarqube.tar
+//sudo docker load -i sonarqube.tar
+
 sudo docker images
-sudo docker run -d --name sonarqube -p 9000:9000 sonarqube:7.5-community
+sudo docker run -d --name sonarqube -p 9000:9000 sonarqube:7.9-community
 sudo docker ps
 
 mvn sonar:sonar   -Dsonar.projectKey=demo   -Dsonar.host.url=http://127.0.0.1:9000   -Dsonar.login=3200becd008c58124176568354a2d54827bb29e1
