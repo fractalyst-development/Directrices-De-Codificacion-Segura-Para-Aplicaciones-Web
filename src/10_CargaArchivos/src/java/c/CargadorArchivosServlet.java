@@ -34,9 +34,7 @@ public class CargadorArchivosServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String fileNameFullPath = request.getParameter("fileName");
-        // String fullPath = fileItem.getName();
-        String fileName = fileNameFullPath.substring(fileNameFullPath.lastIndexOf(File.separator) + 1);
+        String fileName = request.getParameter("fileName");
         System.out.println("fileName:" + fileName);
         System.out.println("File.separator:" + File.separator);
         if (fileName == null || fileName.equals("")) {
@@ -84,16 +82,15 @@ public class CargadorArchivosServlet extends HttpServlet {
                 System.out.println("ContentType=" + fileItem.getContentType());
                 System.out.println("Size in bytes=" + fileItem.getSize());
 
-                String fullPath = fileItem.getName();
-                String filename = fullPath.substring(fullPath.lastIndexOf(File.separator) + 1);
+                String fileName = fileItem.getName();
+                File file = new File(request.getServletContext().getAttribute("FILES_DIR") + File.separator + fileName);
 
-                File file = new File(request.getServletContext().getAttribute("FILES_DIR") + File.separator + filename);
                 System.out.println("Absolute Path at server=" + file.getAbsolutePath());
                 fileItem.write(file);
 
                 out.write("File " + fileItem.getName() + " uploaded successfully.");
                 out.write("<br>");
-                out.write("<a href=\"cargaArchivo.do?fileName=" + filename + "\">Download " + fileItem.getName() + "</a>");
+                out.write("<a href=\"cargaArchivo.do?fileName=" + fileName + "\">Download " + fileItem.getName() + "</a>");
             }
         } catch (FileUploadException e) {
             out.write("1Exception in uploading file." + e.getLocalizedMessage());
