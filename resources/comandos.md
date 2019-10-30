@@ -46,6 +46,12 @@ java -jar webgoat-container-7.1-exec.jar
 
 ### SONARQUBE
 
+```bash
+sudo systemctl status sonar
+// sudo systemctl start sonar
+// sudo systemctl start sonar
+```
+
 #### Docker
 
 ```bash
@@ -60,8 +66,11 @@ sudo docker images
 sudo docker run -d --name sonarqube -p 9000:9000 sonarqube:7.9-community
 // sudo docker rm sonarqube
 sudo docker ps
-// Levantar sonarqube
+// analizar app
 mvn sonar:sonar   -Dsonar.projectKey=demo   -Dsonar.host.url=http://127.0.0.1:9000   -Dsonar.login=3200becd008c58124176568354a2d54827bb29e1
+mvn sonar:sonar \
+  -Dsonar.host.url=http://localhost:9000 \
+  -Dsonar.login=0c54f70d8f6bda84f368a5cd7e3dc88fb1553d1a
 // http://127.0.0.1:9000
 // admin / admin
 
