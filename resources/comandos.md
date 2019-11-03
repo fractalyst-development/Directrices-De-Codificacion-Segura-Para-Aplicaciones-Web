@@ -56,6 +56,7 @@ go to this directory: <https://github.com/jtmelton/appsensor/tree/master/sample-
 run this command:
 
 ```bash
+cd ~/Downloads/_software/appsensor/sample-apps/appsensor-ws-rest-server-with-websocket-boot
 mvn spring-boot:run -DAPPSENSOR_WEB_SOCKET_HOST_URL=ws://localhost:8085/dashboard
 ```
 
@@ -64,6 +65,7 @@ go to this directory: <https://github.com/jtmelton/appsensor/tree/master/sample-
 run this command:
 
 ```bash
+cd ~/Downloads/_software/appsensor/sample-apps/appsensor-ws-rest-client-boot-data-generator
 mvn spring-boot:run
 ```
 
@@ -72,6 +74,7 @@ go to this directory: <https://github.com/jtmelton/appsensor/tree/master/appsens
 run this command:
 
 ```bash
+cd ~/Downloads/_software/appsensor/appsensor-ui
 mvn spring-boot:run -DAPPSENSOR_REST_REPORTING_ENGINE_URL=http://localhost:8085 -DAPPSENSOR_CLIENT_APPLICATION_ID_HEADER_NAME=X-Appsensor-Client-Application-Name2 -DAPPSENSOR_CLIENT_APPLICATION_ID_HEADER_VALUE=myclientapp -DAPPSENSOR_WEB_SOCKET_HOST_URL=ws://localhost:8085/dashboard -Dspring.datasource.url=jdbc:mysql://localhost/appsensor -Dspring.datasource.username=appsensor_user -Dspring.datasource.password=appsensor_pass
 ```
 
