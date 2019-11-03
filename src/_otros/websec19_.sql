@@ -87,3 +87,21 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2019-10-20  1:46:01
+
+
+
+CREATE TABLE `websec19`.`a3_datos` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nombreusuario` varchar(45) DEFAULT NULL,
+  `contrasenha` varchar(500) DEFAULT NULL,
+  `nombre` varchar(45) DEFAULT NULL,
+  `apellido_paterno` varchar(45) DEFAULT NULL,
+  `apellido_materno` varchar(45) DEFAULT NULL,
+  `pregunta_secreta` varchar(300) DEFAULT NULL,
+  `respuesta_secreta` varchar(500) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `nombreusuario` (`nombreusuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+INSERT INTO `a3_datos` VALUES (1,'usuario1@testmail.com','pwd1','Usuario1','Apellido1','Materno1','¿Cuál es tu color favorito?','azul'),(2,'usuario2@testmail.com','pwd2','Usuario2','Apellido2','Materno2','¿Cuál es tu color favorito?','rojo'),(3,'usuario3@testmail.com','pwd3','Usuario3','Apellido3','Materno3','¿Cuál es tu color favorito?','verde');
+

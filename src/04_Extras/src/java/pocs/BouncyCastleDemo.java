@@ -32,10 +32,10 @@ public class BouncyCastleDemo {
             leidos = in.read(buffer, 0, 1090);
         }
         in.close();
-        byte[] resumen = messageDigest.digest(); // Completar el resumen
+        byte[] digest = messageDigest.digest(); // Completar el resumen
 // Mostrar resumen
-        System.out.println("RESUMEN:");
-        mostrarBytes(resumen);
+        System.out.println("Digest:");
+        mostrarBytes(digest);
         System.out.println();
     }
 
