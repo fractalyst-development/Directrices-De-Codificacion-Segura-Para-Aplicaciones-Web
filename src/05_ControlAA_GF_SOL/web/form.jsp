@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>A2 - Broken Authentication</title>
+        <title>05 CONTROL ACCESO FORM</title>
     </head>
     <body>
         <h3>Usuarios</h3>
@@ -10,7 +10,6 @@
             <li>usuario/Welcome1/usuario</li>
             <li>admin/Welcome1/admin</li>
         </ul>
-
         <div id="login">
             <p>Inicio de sesi&oacute;n</p>
             <form id="formLogin" action="j_security_check" method="POST">

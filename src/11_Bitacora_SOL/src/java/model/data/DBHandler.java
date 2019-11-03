@@ -19,7 +19,8 @@ public class DBHandler {
         properties.setProperty("password", "Welcome1");
 //        properties.setProperty("useSSL", "false");
 //        properties.setProperty("autoReconnect", "true");
-        Class.forName("com.mysql.jdbc.Driver");
+//        Class.forName("com.mysql.jdbc.Driver");
+        Class.forName("com.mysql.cj.jdbc.Driver");
         //"jdbc:mysql://127.0.0.1:3306/websec19", "usuario", "Welcome1"
         String urlTmp = "jdbc:mysql://127.0.0.1:3306/websec19?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         con = DriverManager.getConnection(urlTmp, properties);

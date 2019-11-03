@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>A1 - SQL INJECTION</title>
+ <title>A1 - Inyecci&oacute;n de C&oacute;digo</title>
     </head>
     <body onload="limpiaElemento()">
         <h3>A1 - SQL INJECTION</h3>

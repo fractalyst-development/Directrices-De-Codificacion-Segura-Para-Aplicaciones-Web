@@ -1,6 +1,7 @@
 # COMANDOS ÚTILES
 
 ## NMAP
+
 // Listar suites de cifrado del servidor
 
 ```bash
@@ -43,6 +44,40 @@ sqlmap -u "http://localhost:8080/09_InyeccionDeCodigo/detalleUsuario.do" --data=
 cat WebGoat.0* > webgoat-container-7.1-exec.jar
 java -jar webgoat-container-7.1-exec.jar
 ```
+
+## APPSENSOR
+
+<https://github.com/jtmelton/appsensor>
+
+<https://github.com/jtmelton/appsensor/blob/master/sample-apps/DemoSetup.md>
+
+Start REST / WebSocket Server
+go to this directory: <https://github.com/jtmelton/appsensor/tree/master/sample-apps/appsensor-ws-rest-server-with-websocket-boot>
+run this command:
+
+```bash
+mvn spring-boot:run -DAPPSENSOR_WEB_SOCKET_HOST_URL=ws://localhost:8085/dashboard
+```
+
+Start REST Client Data Generator
+go to this directory: <https://github.com/jtmelton/appsensor/tree/master/sample-apps/appsensor-ws-rest-client-boot-data-generator>
+run this command:
+
+```bash
+mvn spring-boot:run
+```
+
+Start AppSensorUI
+go to this directory: <https://github.com/jtmelton/appsensor/tree/master/appsensor-ui>
+run this command:
+
+```bash
+mvn spring-boot:run -DAPPSENSOR_REST_REPORTING_ENGINE_URL=http://localhost:8085 -DAPPSENSOR_CLIENT_APPLICATION_ID_HEADER_NAME=X-Appsensor-Client-Application-Name2 -DAPPSENSOR_CLIENT_APPLICATION_ID_HEADER_VALUE=myclientapp -DAPPSENSOR_WEB_SOCKET_HOST_URL=ws://localhost:8085/dashboard -Dspring.datasource.url=jdbc:mysql://localhost/appsensor -Dspring.datasource.username=appsensor_user -Dspring.datasource.password=appsensor_pass
+```
+
+Login
+open your browser to : <http://localhost:8084>
+When prompted login with user analyst and password analyst.
 
 ### SONARQUBE
 

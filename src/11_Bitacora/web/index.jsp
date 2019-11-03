@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>A2 - Broken Authentication</title>
+        <title>A10 - Insufficient Logging & Monitoring</title>
     </head>
     <body>
         <h3>Usuarios</h3>

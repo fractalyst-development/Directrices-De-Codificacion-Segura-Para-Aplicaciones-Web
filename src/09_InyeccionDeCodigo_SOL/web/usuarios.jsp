@@ -3,7 +3,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>A2 - Broken Authentication</title>
+        <title>A1 - Inyecci&oacute;n de C&oacute;digo</title>
     </head>
     <body>
 
