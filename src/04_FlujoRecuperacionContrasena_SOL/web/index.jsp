@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Almacenaje</title>
+        <title>A2 - Broken Authentication</title>
     </head>
     <body>
         <h3>Usuarios</h3>
@@ -11,7 +11,6 @@
             <li>usuario2@testmail.com</li>
         </ul>
         <br>
-        <a href="cifrator.do">Cifrator</a>
         <div id="mensaje">${mensaje}</div>
         <div id="login">
             <p>Inicio de sesi&oacute;n</p>

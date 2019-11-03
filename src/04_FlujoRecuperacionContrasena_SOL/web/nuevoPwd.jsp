@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Almacenaje</title>
+        <title>A2 - Broken Authentication</title>
     </head>
     <body>
 

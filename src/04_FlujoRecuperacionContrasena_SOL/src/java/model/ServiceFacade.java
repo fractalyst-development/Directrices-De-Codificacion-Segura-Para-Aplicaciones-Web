@@ -8,7 +8,7 @@ import model.data.DBHandler;
 public class ServiceFacade {
 
     public boolean login(String email, String pwd) {
-        final String SQL = "select * from a3_datos where nombreusuario = ? AND contrasenha = ?";
+        final String SQL = "select * from a2_autenticacion where nombreusuario = ? AND contrasenha = ?";
         boolean exito = false;
         DBHandler connection = null;
         Connection con = null;
@@ -31,7 +31,7 @@ public class ServiceFacade {
     }
 
     public boolean cambiaPassword(String email, String pwd) {
-        final String SQL = "UPDATE a3_datos SET contrasenha = ? WHERE nombreusuario = ?";
+        final String SQL = "UPDATE a2_autenticacion SET contrasenha = ? WHERE nombreusuario = ?";
         boolean exito = false;
         DBHandler connection = null;
         Connection con = null;
@@ -54,7 +54,7 @@ public class ServiceFacade {
     }
 
     public boolean esLaRespuesta(String email, String respuesta) {
-        final String SQL = "select * from a3_datos where nombreusuario = ? and respuesta_secreta = ?";
+        final String SQL = "select * from a2_autenticacion where nombreusuario = ? and respuesta_secreta = ?";
         boolean exito = false;
         DBHandler connection = null;
         Connection con = null;
@@ -78,7 +78,7 @@ public class ServiceFacade {
     }
 
     public boolean existeUsuario(String email) {
-        final String SQL = "select * from a3_datos where nombreusuario = ?";
+        final String SQL = "select * from a2_autenticacion where nombreusuario = ?";
         boolean exito = false;
         DBHandler connection = null;
         Connection con = null;
@@ -100,7 +100,7 @@ public class ServiceFacade {
     }
 
     public String obtenPregunta(String email) {
-        final String SQL = "select pregunta_secreta from a3_datos where nombreusuario = ?";
+        final String SQL = "select pregunta_secreta from a2_autenticacion where nombreusuario = ?";
         String pregunta = "SIN PREGUNTA";
         DBHandler connection = null;
         Connection con = null;
