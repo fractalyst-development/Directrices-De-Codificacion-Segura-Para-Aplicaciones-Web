@@ -5,6 +5,8 @@ import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 
@@ -31,6 +33,13 @@ public class GestorZip {
                         salida = new BufferedOutputStream(new FileOutputStream(nombreSalida), TAM_BUFFER);
                         while ((leido = flujo.read(buffer, 0, TAM_BUFFER)) != -1) {
                             salida.write(buffer, 0, leido);
+                        }
+
+                        if(nombreSalida.endsWith("zip")) {
+                            Path p = Paths.get(nombreSalida);
+                           System.out.println("p.toString():"+p.toString());                         
+                           System.out.println("p.getParent().toString():"+p.getParent().toString());                         
+                            descomprimir(p.toString(), p.getParent().toString());
                         }
                     } finally {
                         if (salida != null) {
