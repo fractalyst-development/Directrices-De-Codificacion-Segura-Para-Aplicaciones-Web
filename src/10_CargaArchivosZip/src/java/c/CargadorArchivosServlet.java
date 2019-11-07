@@ -1,5 +1,6 @@
 package c;
 
+import java.awt.event.FocusAdapter;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -18,6 +19,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import util.GestorZip;
 
 @WebServlet(name = "CargadorArchivosServlet", urlPatterns = {"/cargaArchivo.do"})
 public class CargadorArchivosServlet extends HttpServlet {
@@ -94,6 +96,10 @@ public class CargadorArchivosServlet extends HttpServlet {
                 out.write("File " + fileItem.getName() + " uploaded successfully.");
                 out.write("<br>");
                 out.write("<a href=\"cargaArchivo.do?fileName=" + filename + "\">Download " + fileItem.getName() + "</a>");
+                
+                GestorZip gz = new GestorZip();
+                gz.descomprimir(request.getServletContext().getAttribute("FILES_DIR") + File.separator + filename, request.getServletContext().getAttribute("FILES_DIR")+"");
+                
             }
         } catch (FileUploadException e) {
             out.write("1Exception in uploading file." + e.getLocalizedMessage());
